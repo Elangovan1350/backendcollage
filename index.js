@@ -84,7 +84,7 @@ const productSchema = mongoose.Schema(
   {
     title: String,
     price: Number,
-    image: String,
+    thumbnail: String,
     description: String,
     category: String,
   },
@@ -107,12 +107,12 @@ app.get("/:id", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  const { title, price, description, image, category } = req.body;
+  const { title, price, description, thumbnail, category } = req.body;
   const vandu = await new products({
     title,
     price,
     description,
-    image,
+    thumbnail,
     category,
   });
   vandu.save().then((resq) => {
