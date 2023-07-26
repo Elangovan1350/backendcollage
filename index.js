@@ -118,10 +118,10 @@ app.post("/", async (req, res) => {
   vandu.save().then((resq) => {
     if (resq) {
       console.log("data saved");
-      res.status(200).json({ vandu, message: "data saved" });
+      res.send( "data saved" );
     } else {
       console.log("data not saved");
-      res.status(400).json(vandu);
+      res.send("data not saved")
     }
   });
 });
